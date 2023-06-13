@@ -1,0 +1,42 @@
+<%- include('layout/header') %>
+    <div class="container">
+        <div class="row">    
+            <div class="col-lg-6 mx-auto mt-4">
+                <div class="card-shadow">
+                    <div class="card-header bg-dark">
+                        <h6 class="text-light">Add new telephone</h6>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="serialNumber">Serial Number</label>
+                                <input type="text" name="serialNumber" class="form-control form-control-md" placeholder="Enter Serial Number" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="User">User</label>
+                                <input type="text" name="User" class="form-control form-control-md" placeholder="Enter User" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="brand">Brand</label>
+                                <input type="text" name="brand" class="form-control form-control-md" placeholder="Enter brand" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="model">Model</label>
+                                <input type="text" name="model" class="form-control form-control-md" placeholder="Enter Model" required />
+                            </div>
+                           
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Select Image</label>
+                                <input class="form-control form-control-md" type="file" name="image" required />
+                            </div>
+                            <div class="mb-3 d-grid">
+                                <input type="submit" name="submit" value="Add Telephone" class="btn btn-dark btn-md" />
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('layout/footer') %>

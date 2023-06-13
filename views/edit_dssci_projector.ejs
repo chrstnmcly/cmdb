@@ -1,0 +1,38 @@
+<%- include('layout/header_dssci_projector') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mt-4">
+                <div class="card-shadow">
+                    <div class="card-header bg-dark">
+                        <h6 class="text-light">Edit DSSCI - Projector <%= dssci_projector.name %></h6>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="/update_dssci_projector/<%= dssci_projector._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="brand">Name</label>
+                                <input type="text" name="brand" class="form-control form-control-md" placeholder="Enter name" value="<%= dssci_projector.brand %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="tag">Tag</label>
+                                <input type="text" name="tag" class="form-control form-control-md" placeholder="Enter Tag" value="<%= dssci_projector.tag %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="serialNumber">Serial Number</label>
+                                <input type="text" name="serialNumber" class="form-control form-control-md" placeholder="Enter Serial Number" value="<%= dssci_projector.serialNumber %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Select Image</label>
+                                <input class="form-control form-control-md" type="file" name="image" />
+                            </div>
+                            <input type="hidden" name="old_image" value="<%= dssci_projector.image %>" />
+                            <img src="/<%= dssci_projector.image %>" width="100" class="img-thumbnail mt-1" alt="" />
+                            <div class="mb-3 d-grid">
+                                <input type="submit" name="submit" value="update DSSCI-Projector" class="btn btn-dark btn-md" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('layout/footer_dssci_projector') %>

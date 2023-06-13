@@ -1,0 +1,50 @@
+<%- include('layout/header_naco_bio') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mt-4">
+                <div class="card-shadow">
+                    <div class="card-header bg-dark">
+                        <h6 class="text-light">Edit NACO Biometrics <%= naco_biometric.name %></h6>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="/update_naco_biometric/<%= naco_biometric._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="unitNumber">Unit Number</label>
+                                <input type="text" name="unitNumber" class="form-control form-control-md" placeholder="Enter Unit Number" value="<%= naco_biometric.unitNumber %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="brand">Name</label>
+                                <input type="text" name="brand" class="form-control form-control-md" placeholder="Enter name" value="<%= naco_biometric.brand %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="serialNumber">Serial Number</label>
+                                <input type="text" name="serialNumber" class="form-control form-control-md" placeholder="Enter Serial Number" value="<%= naco_biometric.serialNumber %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="location">Tagging Serialization</label>
+                                <input type="text" name="taggingSerialization" class="form-control form-control-md" placeholder="Enter Tagging Serialization" value="<%= naco_biometric.tag %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="roomLocation">Location</label>
+                                <input type="text" name="roomLocation" class="form-control form-control-md" placeholder="Enter Location" value="<%= naco_biometric.roomLocation %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="ip">IP Address</label>
+                                <input type="text" name="ipAddress" class="form-control form-control-md" placeholder="Enter IP Address" value="<%= naco_biometric.ip %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Select Image</label>
+                                <input class="form-control form-control-md" type="file" name="image" />
+                            </div>
+                            <input type="hidden" name="old_image" value="<%= naco_biometric.image %>" />
+                            <img src="/<%= naco_biometric.image %>" width="100" class="img-thumbnail mt-1" alt="" />
+                            <div class="mb-3 d-grid">
+                                <input type="submit" name="submit" value="update Naco-Biometrics" class="btn btn-dark btn-md" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('layout/footer_naco_bio') %>

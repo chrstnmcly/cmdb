@@ -1,0 +1,40 @@
+<%- include('layout/header_naco_ap') %>
+    <div class="container">
+        <div class="row">    
+            <div class="col-lg-6 mx-auto mt-4">
+                <div class="card-shadow">
+                    <div class="card-header bg-dark">
+                        <h6 class="text-light">Add new Access Points ( NACO )</h6>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="/add_naco_ap" method="post" id="add-form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="serialNumber">Serial Number</label>
+                                <input type="text" name="serialNumber" class="form-control form-control-md" placeholder="Enter Serial Number" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="tag">Asset Tag</label>
+                                <input type="text" name="tag" class="form-control form-control-md" placeholder="Enter Asset Tag" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="roomLocation">Location</label>
+                                <input type="text" name="roomLocation" class="form-control form-control-md" placeholder="Enter Room Assignment" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="area">Area</label>
+                                <input type="text" name="area" class="form-control form-control-md" placeholder="Enter Room Assignment" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Select Image</label>
+                                <input class="form-control form-control-md" type="file" name="image" required />
+                            </div>
+                            <div class="mb-3 d-grid">
+                                <input type="submit" name="submit" value="Add projector" class="btn btn-dark btn-md" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('layout/footer_naco_ap') %>

@@ -1,0 +1,34 @@
+<%- include('layout/header_servers') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mt-4">
+                <div class="card-shadow">
+                    <div class="card-header bg-dark">
+                        <h6 class="text-light">Edit servers <%= servers.name %></h6>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="/update_servers/<%= servers._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="servers">Server Name</label>
+                                <input type="text" name="servers" class="form-control form-control-md" placeholder="Enter Server Name" value="<%= servers.server %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="assetTag">Asset Tag</label>
+                                <input type="text" name="assetTag" class="form-control form-control-md" placeholder="Enter Asset Tag" value="<%= servers.tag %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Select Image</label>
+                                <input class="form-control form-control-md" type="file" name="image" />
+                            </div>
+                            <input type="hidden" name="old_image" value="<%= servers.image %>" />
+                            <img src="/<%= servers.image %>" width="100" class="img-thumbnail mt-1" alt="" />
+                            <div class="mb-3 d-grid">
+                                <input type="submit" name="submit" value="update servers" class="btn btn-dark btn-md" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('layout/footer_servers') %>

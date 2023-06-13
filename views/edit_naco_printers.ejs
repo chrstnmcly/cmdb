@@ -1,0 +1,34 @@
+<%- include('layout/header_naco_printer') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mt-4">
+                <div class="card-shadow">
+                    <div class="card-header bg-dark">
+                        <h6 class="text-light">Edit NACO Printer <%= naco_printers.name %></h6>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="/update_naco_printers/<%= naco_printers._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="assetTag">Asset Tag</label>
+                                <input type="text" name="assetTag" class="form-control form-control-md" placeholder="Enter Asset Tag" value="<%= naco_printers.tag %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="location">Department</label>
+                                <input type="text" name="location" class="form-control form-control-md" placeholder="Enter Location" value="<%= naco_printers.roomLocation %>" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Select Image</label>
+                                <input class="form-control form-control-md" type="file" name="image" />
+                            </div>
+                            <input type="hidden" name="old_image" value="<%= naco_printers.image %>" />
+                            <img src="/<%= naco_printers.image %>" width="100" class="img-thumbnail mt-1" alt="" />
+                            <div class="mb-3 d-grid">
+                                <input type="submit" name="submit" value="update printer" class="btn btn-dark btn-md" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('layout/footer_naco_printer') %>

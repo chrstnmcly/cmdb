@@ -1,0 +1,28 @@
+<%- include('layout/header_dssci_phone') %>
+    <div class="container">
+        <div class="row">    
+            <div class="col-lg-6 mx-auto mt-4">
+                <div class="card-shadow">
+                    <div class="card-header bg-dark">
+                        <h6 class="text-light">Add new Phone ( DSSCI )</h6>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="/add_dssci_phone" method="post" id="add-form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="tag">Asset Tag</label>
+                                <input type="text" name="tag" class="form-control form-control-md" placeholder="Enter Asset Tag" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Select Image</label>
+                                <input class="form-control form-control-md" type="file" name="image" required />
+                            </div>
+                            <div class="mb-3 d-grid">
+                                <input type="submit" name="submit" value="Add NACO Printer" class="btn btn-dark btn-md" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('layout/footer_dssci_phone') %>
